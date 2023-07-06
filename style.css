@@ -31,6 +31,10 @@ button {
     border: none;
 }
 
+  button:focus {
+    outline: none !important;
+  }
+
 button i {
     padding-left: 20px;
 }
@@ -167,6 +171,21 @@ button i {
     transition: all 200ms linear;
 }
 
+@media (max-width: 768px) {
+    .navbar a {
+        margin: 0px 0px;
+    }
+
+    .nav-item:hover:after {
+        bottom: 0px;
+        opacity: 1;
+    }
+    .start-header.scroll-on .navbar a {
+        margin: 0px 0px;
+    }
+   
+}
+
 
 
 
@@ -178,26 +197,8 @@ button i {
 
 /*Landing Screen*/
 
-body {
-    color: #111;
-    background: #000 !important;
-    overflow-x: hidden;
-}
 
-.landing {
-    padding: 10vw;
-    background-color: #fff !important;
-    position: relative;
-    height: 100%;
-    max-width: 120vh;
-    min-height: 120vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-y: hidden !important;
-}
-
-.landing h1 {
+.overall h1 {
     font-family: 'Raleway', sans-serif !important;
     font-weight: 900;
     margin: 2rem auto;
@@ -205,6 +206,7 @@ body {
     text-align: center;
     max-width: 900px;
     mix-blend-mode: luminosity;
+    z-index: 2;
     pointer-events: none;
     color: white;
     position: fixed;
@@ -214,38 +216,66 @@ body {
     bottom: 0;
     display: grid;
     place-items: center;
-    z-index: 1;
     color: white;
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
 }
 
-.gallery {
-    z-index: 0;
+
+body {
+    font-family: Termina, sans-serif;
+    color: #111;
+    background: #fff !important;
+    overflow-x: hidden;
+}
+#header{
+    background-color: #fff;
+}
+
+.overall {
+    position: relative;
+    height: 120vh;
+    background: #000;
+}
+.overall section {
+    width: 100vw;
+    min-width: 100vw;
+    padding: 10vw;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: hidden;
+    position: absolute;
+}
+
+.overall .gallery {
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 110vh;
-    max-height: 120vh;
-    position: fixed;
+    min-width: 100vw;
+    height: 100%;
+    padding-right: 15px;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    overflow: hidden;
-    background-color: #fff;
+    overflow: visible;
 }
-
 @media (max-width: 768px) {
-    .gallery {
-        width: 160%;
-    }
-
-    .gallery .col {
-        padding: 0px 5px !important;
-    }
+    .overall .gallery {
+        width: 200%;
+        padding-right: 0px;
+   }
+   
 }
 
-.gallery .col {
+.overall .gallery .col{
+    padding: 0 !important;
+   }
+.overall .col {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -253,22 +283,15 @@ body {
     align-self: flex-start;
     justify-self: flex-start;
 }
-
-.gallery .col:nth-child(2) {
+.overall .col:nth-child(2) {
     align-self: flex-end;
     justify-self: flex-end;
 }
-
-.image {
+.overall .image {
     width: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
 }
-
-.image:hover {
-    filter: saturate(1);
-}
-
-.gallery img {
+.overall img {
     transition: 0.3s ease-out;
     overflow: hidden;
     width: 100%;
@@ -279,8 +302,17 @@ body {
 
 .scroll-down-btn {
     position: absolute;
-    margin: 0 auto;
+    width: 100% !important;
+    z-index: 999;
     top: 85vh;
+}
+
+.scroll-down-btn-relative{
+    display: flex;
+    position: relative;
+    width: 78%;
+    align-items: center;
+    justify-content: center;
 }
 
 .chevron {
@@ -548,8 +580,10 @@ body {
 
 .full-width-screen-footer{
     position: absolute;
-    width: 100%;
     height: 80%;
+    width: 100%;
+    max-width: 100vW;
+    overflow: hidden !important;
 }
 
 #particles-js{
@@ -557,4 +591,98 @@ body {
     height: 100%;
     background-color: #000;
     z-index: 100000000000;
+}
+
+
+/*Menu bar css new*/
+
+
+.menu-toggle {
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: 1.625rem;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .menu {
+    position: fixed;
+    inset: 0;
+    height:100vh;
+    background-color: #000;
+    color: #f1faee;
+    transform: translateX(-100%);
+    overflow-y: hidden;
+  }
+  
+  .menu a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .menu a:hover {
+    color: #a8dadc;
+  }
+  
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    width: min(100% - 2rem, 70rem);
+    height: 100%;
+    margin-inline: auto;
+    padding-block: 2rem;
+  }
+  
+  .menu nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1rem;
+  }
+  
+  .menu nav a {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Tapestry', cursive;
+  }
+  
+  .menu nav a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    inset-inline: -0.5rem;
+    height: 6px;
+    background-color: currentColor;
+    opacity: 0;
+    transform: scaleX(0.6);
+    transition: all 0.2s ease-out;
+  }
+  
+  .menu nav a:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  
+  .social {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    font-size: 1.25rem;
+  }
+  
+
+  @media (min-width: 768px) {
+    .menu{
+        display: none;
+   }
+   .menu-toggle{
+    display: none;
+   }
+   
 }
