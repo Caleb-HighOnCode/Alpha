@@ -129,7 +129,7 @@ particlesJS("particles-js", {
 }
 },
 "color": {
-"value": ["#fff"],
+"value": ["#fff",'#00FFEE'],
 },
 
 "shape": {
@@ -139,7 +139,7 @@ particlesJS("particles-js", {
 "color": "#fff"
 },
 "polygon": {
-"nb_sides": 5
+"nb_sides": 7
 },
 },
 "opacity": {
@@ -148,7 +148,7 @@ particlesJS("particles-js", {
 "anim": {
 "enable": true,
 "speed": 2,
-"opacity_min": 0.1,
+"opacity_min": 0.3,
 "sync": false
 }
 },
