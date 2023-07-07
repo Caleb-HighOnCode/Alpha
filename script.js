@@ -83,25 +83,6 @@ cols.forEach((col, i) => {
 });
 
 
-const imagesScrollerTrigger = ScrollTrigger.create({
-  trigger: "section",
-  start: "top 50%",
-  end: "bottom 50%",
-  onUpdate: function (self) {
-      const velocity = self.getVelocity();
-      if (velocity > 0) {
-          if (additionalYAnim) additionalYAnim.kill();
-          additionalY.val = -velocity / 2000;
-          additionalYAnim = gsap.to(additionalY, { val: 0 });
-      }
-      if (velocity < 0) {
-          if (additionalYAnim) additionalYAnim.kill();
-          additionalY.val = -velocity / 3000;
-          additionalYAnim = gsap.to(additionalY, { val: 0 });
-      }
-  }
-});
-
 
 // scrolldown butto script
 
