@@ -1,0 +1,116 @@
+.landing-about {
+    margin-top: 90px;
+    background: url('./imgs/bg2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-about .row .col {
+    height: 80vh;
+}
+
+.landing-about h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900;
+}
+
+.anim,
+.anim svg {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    padding: 20px 0px;
+}
+
+.anim path {
+    stroke-width: 2;
+}
+
+.experience i{
+    color: #00736c;
+    padding-right: 10px;
+}
+
+
+.about-pic-gp .img{
+    background-size: cover;
+    margin: 10px;
+    background-color: #999;
+}
+
+.about-pic-gp .img1{
+    height: 100px;
+    width: 250px;
+}
+.about-pic-gp .img2{
+    height: 350px;
+    width: 250px;
+}
+.about-pic-gp .img3{
+    height: 350px;
+    width: 250px;
+}
+.about-pic-gp .img4{
+    height: 100px;
+    width: 250px;
+}
+.about-pic-gp .img5{
+    height: 150px;
+    width: 300px;
+}
+
+
+@media (max-width:578px){
+    .about-pic-gp .img1{
+        height: 80px;
+        width: 150px;
+    }
+    .about-pic-gp .img2{
+        height: 250px;
+        width: 150px;
+    }
+    .about-pic-gp .img3{
+        height: 250px;
+        width: 150px;
+    }
+    .about-pic-gp .img4{
+        height: 80px;
+        width: 150px;
+    }
+    .about-pic-gp .img5{
+        height: 80px;
+        width: 200px;
+    }
+}
+
+/*content-step*/
+
+.content-step h1{
+    margin-top: -10px;
+    color: #03A69B;
+}
+
+.content-step p{
+    color: #999;
+    padding-top: 6px;
+}
+
+/*Services-about*/
+
+.services-all{
+    background: rgba(255,255,255,0.05) url('./imgs/abt-service-bg.png');
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.service-item{
+    padding: 25px 15px ;
+    border-top: 1px solid #777;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.service-item:hover{
+    background-color: rgba(0,0,0,0.05);
+}
